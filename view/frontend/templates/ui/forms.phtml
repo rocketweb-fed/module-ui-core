@@ -1,0 +1,97 @@
+<h2>Forms</h2>
+<form action="" method="" class="form">
+    <p class="form-instructions">Form instructions paragraph</p>
+    <div class="flex">
+        <div class="flex-item">
+            <fieldset class="fieldset">
+                <legend class="legend"><span>Personal Information</span></legend><br>
+                <div class="field required">
+                    <label for="firstname" class="label">
+                        <span>Name</span>
+                    </label>
+                    <div class="control">
+                        <input type="text" id="firstname" name="firstname" class="input-text required-entry" placeholder="John Doe">
+                    </div>
+                </div>
+                <div class="field required">
+                    <label for="email" class="label">
+                        <span>Email</span>
+                    </label>
+                    <div class="control">
+                        <input type="text" id="email" name="email" data-validate="{required:true, 'validate-email':true}" class="input-text required-entry" placeholder="john.doe@email.com">
+                    </div>
+                </div>
+                <div class="field password required">
+                    <label class="label" for="password"><span>Password</span></label>
+                    <div class="control">
+                        <input type="password" autocomplete="off" data-validate="{required:true, 'validate-customer-password':true}" class="input-text" id="password" name="password">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" for="comment">
+                        <span>Comment</span>
+                    </label>
+                    <textarea id="comment" name="comment" cols="5" rows="5" class="input-text" placeholder="Comment"></textarea>
+                </div>
+            </fieldset>
+        </div>
+        <div class="flex-item">
+            <span>&nbsp;</span>
+        </div>
+        <div class="flex-item">
+            <fieldset data-hasrequired="* Required Fields" class="fieldset">
+                <legend class="legend"><span>Additional Information</span></legend><br>
+                <div class="field" name="selectfield">
+                    <label class="label" for="options">
+                        <span>Options</span>
+                    </label>
+                    <div class="control">
+                        <select class="select" name="options" id="options" placeholder="">
+                            <option value="">Please select an option</option>
+                            <option data-title="Option 1" value="1">Option 1</option>
+                            <option data-title="Option 2" value="2">Option 2</option>
+                            <option data-title="Option 3" value="3">Option 3</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="items">
+                    <h6>Checkboxes</h6>
+                    <div class="item-options">
+                        <div class="field choice item">
+                            <input type="checkbox" id="checkbox1" class="checkbox">
+                            <label class="label" for="checkbox1">
+                                <span>Option 1</span>
+                            </label>
+                        </div>
+                        <div class="field choice item">
+                            <input type="checkbox" id="checkbox2" class="checkbox">
+                            <label class="label" for="checkbox2">
+                                <span>Option 2</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="items">
+                    <h6>Radio buttons</h6>
+                    <div class="item-options">
+                        <div class="field choice item">
+                            <input type="radio" class="radio" value="" id="radio1" name="radio">
+                            <label class="label" for="radio1">
+                                Option 1
+                            </label>
+                        </div>
+                        <div class="field choice item">
+                            <input type="radio" class="radio" value="" id="radio2" name="radio">
+                            <label class="label" for="radio2">
+                                Option 2
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</form>
+<hr class="space">

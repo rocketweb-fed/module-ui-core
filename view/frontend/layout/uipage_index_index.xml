@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    
+    <referenceBlock name="page.main.title">
+        <action method="setPageTitle">
+            <argument translate="true" name="title" xsi:type="string">Style guide</argument>
+        </action>
+    </referenceBlock>
+    <referenceContainer name="content">
+        <block class="Magento\Framework\View\Element\Template" name="ui-page" template="RocketWeb_UiCore::ui.phtml">
+            <block class="RocketWeb\UiCore\Block\Index" name="ui-color-palette" template="RocketWeb_UiCore::ui/color-palette.phtml" />
+            <block class="RocketWeb\UiCore\Block\Index" name="ui-typography" template="RocketWeb_UiCore::ui/typography.phtml" />
+            <block class="RocketWeb\UiCore\Block\Index" name="ui-buttons" template="RocketWeb_UiCore::ui/buttons.phtml" />
+            <block class="RocketWeb\UiCore\Block\Index" name="ui-forms" template="RocketWeb_UiCore::ui/forms.phtml" />
+            <block class="RocketWeb\UiCore\Block\Index" name="ui-tabs" template="RocketWeb_UiCore::ui/tabs.phtml" />
+            <block class="RocketWeb\UiCore\Block\Index" name="ui-tables" template="RocketWeb_UiCore::ui/tables.phtml" />
+            <block class="RocketWeb\UiCore\Block\Index" name="ui-icons" template="RocketWeb_UiCore::ui/icons.phtml" />
+        </block>
+    </referenceContainer>
+</page>

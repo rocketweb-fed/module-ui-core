@@ -1,0 +1,8 @@
+<?php 
+$helper = $this->helper('RocketWeb\UiCore\Helper\Data');
+
+if ($helper->getStyleGuide()): 
+    echo $this->getChildHtml(); 
+else: 
+    echo __('Style Guide has been disabled.');
+endif; ?>
