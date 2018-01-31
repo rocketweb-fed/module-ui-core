@@ -1,9 +1,8 @@
 {
     "name": "rocketweb/module-ui-core",
-    "description": "Helper installation functions.",
+    "description": "Helper functions and custom Magento 2 UI components",
     "type": "magento2-module",
-    "version": "1.0.0",
-    "license": "GPL-3.0",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
             "name": "Rocket Web Inc.",
