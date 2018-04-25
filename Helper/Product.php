@@ -190,6 +190,16 @@ class Product extends AbstractHelper
         );
     }
 
+    /**
+     * Checks if the product is on sale
+     * Wrapper for getSpecialPrice. 
+     * @return bool
+     */
+    public function isProductOnSale($product)
+    {
+        return (boolean) $product->getSpecialPrice();
+    }
+
     /** 
      * Return New product label from config
      * @return string
