@@ -22,7 +22,7 @@
         <tab id="rocketweb" translate="label" sortOrder="10">
             <label>Rocket Web</label>
         </tab>
-        <section id="uicore" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+        <section id="rw_uicore" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
             <class>separator-top</class>
             <label>UI Settings</label>
             <tab>rocketweb</tab>
@@ -46,6 +46,15 @@
                     <comment>
                         URL of the Style Guide page eg. `ui`
                     </comment>
+                </field>
+            </group>
+            <group id="product_labels" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Product Labels</label>
+                <field id="new_label" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Label for New products</label>
+                </field>
+                <field id="sale_label" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Label for products on Sale</label>
                 </field>
             </group>
         </section>

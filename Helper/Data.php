@@ -13,8 +13,8 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     protected $_scopeConfig;
 
-    CONST XML_PATH_ENABLE      = 'uicore/general/enable';
-    CONST XML_PATH_STYLE_GUIDE = 'uicore/style_guide/enable';
+    CONST XML_PATH_ENABLE      = 'rw_uicore/general/enable';
+    CONST XML_PATH_STYLE_GUIDE = 'rw_uicore/style_guide/enable';
 
     public function __construct(
         \Magento\Framework\App\Helper\Context $context,

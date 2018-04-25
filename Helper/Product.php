@@ -7,6 +7,8 @@ use Magento\Framework\App\Helper\Context;
 use Magento\Framework\Registry;
 use Magento\Store\Model\StoreManagerInterface;
 use Magento\Catalog\Api\CategoryRepositoryInterface;
+use Magento\Framework\Stdlib\DateTime\TimezoneInterface;
+use Magento\Framework\App\Config\ScopeConfigInterface;
 
 class Product extends AbstractHelper
 {
@@ -23,9 +25,24 @@ class Product extends AbstractHelper
     protected $_storeManager;
 
     /**
+     * @var \Magento\Framework\App\Config\ScopeConfigInterfac
+     */
+    protected $_scopeConfig;
+
+    /**
      * @var Magento\Catalog\Api\CategoryRepositoryInterface
      */
     protected $_categoryRepository;
+
+    /**
+     * @var TimezoneInterface
+     */
+    protected $localeDate;
+
+    /**
+     * @var Product
+     */
+    private $product;
 
     /**
      * @param Magento\Framework\App\Helper\Context $context
@@ -37,11 +54,15 @@ class Product extends AbstractHelper
         Context $context,
         Registry $registry,
         StoreManagerInterface $storeManager,
-        CategoryRepositoryInterface $categoryRepository
+        CategoryRepositoryInterface $categoryRepository,
+        ScopeConfigInterface $scopeConfig,
+        TimezoneInterface $localeDate
     ) {
         $this->_coreRegistry = $registry;
         $this->_storeManager = $storeManager;
         $this->_categoryRepository = $categoryRepository;
+        $this->_scopeConfig = $scopeConfig;
+        $this->localeDate = $localeDate;
         parent::__construct($context);
     }
 
@@ -132,5 +153,58 @@ class Product extends AbstractHelper
     public function getCurrentProduct()
     {
         return $this->_coreRegistry->registry('product');
+    }
+
+    /**
+     * @return Product
+     */
+    public function getProduct()
+    {
+        if (is_null($this->product)) {
+            $this->product = $this->_coreRegistry->registry('product');
+
+            if (!$this->product->getId()) {
+                throw new LocalizedException(__('Failed to initialize product'));
+            }
+        }
+
+        return $this->product;
+    }
+
+    /** 
+     * Return true if product is new, false otherwise
+     * @return bool
+    */
+    public function isProductNew($product)
+    {
+        $newsFromDate = $product->getNewsFromDate();
+        $newsToDate = $product->getNewsToDate();
+        if (!$newsFromDate && !$newsToDate) {
+            return false;
+        }
+
+        return $this->localeDate->isScopeDateInInterval(
+            $product->getStore(),
+            $newsFromDate,
+            $newsToDate
+        );
+    }
+
+    /** 
+     * Return New product label from config
+     * @return string
+    */
+    public function getNewLabel() 
+    {
+        return $this->_scopeConfig->getValue('rw_uicore/product_labels/new_label');
+    }
+
+    /** 
+     * Return Sale product label from config
+     * @return string
+    */
+    public function getSaleLabel() 
+    {
+        return $this->_scopeConfig->getValue('rw_uicore/product_labels/sale_label');
     }
 }
