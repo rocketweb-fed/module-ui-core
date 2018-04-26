@@ -25,12 +25,36 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         $this->_scopeConfig = $scopeConfig;
     }
 
+    /** 
+     * Return true if UI core module is enabled
+     * @return bool
+    */
     public function getEnable(){
         return $this->_scopeConfig->getValue(self::XML_PATH_ENABLE);
     }
 
+    /** 
+     * Return true if Style Guid page is enabled
+     * @return bool
+    */
     public function getStyleGuide(){
         return $this->_scopeConfig->getValue(self::XML_PATH_STYLE_GUIDE);
+    }
+
+    /** 
+     * Return true if social share buttons option is enabled
+     * @return bool
+    */
+    public function isShareButtonsEnabled() {
+        return $this->_scopeConfig->getValue('rw_uicore/social_sharing/enable');
+    }
+
+    /** 
+     * Return social share buttons code
+     * @return bool
+    */
+    public function getShareButtonsCode() {
+        return $this->_scopeConfig->getValue('rw_uicore/social_sharing/share_buttons');
     }
 
 }

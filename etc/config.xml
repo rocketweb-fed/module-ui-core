@@ -32,6 +32,10 @@
                 <sale_label>Sale</sale_label>
                 <show_percentage>0</show_percentage>
             </product_labels>
+            <social_sharing>
+                <enable>0</enable>
+                <share_buttons></share_buttons>
+            </social_sharing>
         </rw_uicore>
     </default>
 </config>
