@@ -30,6 +30,7 @@
             <product_labels>
                 <new_label>New</new_label>
                 <sale_label>Sale</sale_label>
+                <show_percentage>0</show_percentage>
             </product_labels>
         </rw_uicore>
     </default>

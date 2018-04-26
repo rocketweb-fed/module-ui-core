@@ -204,7 +204,7 @@ class Product extends AbstractHelper
      * Return New product label from config
      * @return string
     */
-    public function getNewLabel() 
+    private function getNewLabel() 
     {
         return $this->_scopeConfig->getValue('rw_uicore/product_labels/new_label');
     }
@@ -213,8 +213,67 @@ class Product extends AbstractHelper
      * Return Sale product label from config
      * @return string
     */
-    public function getSaleLabel() 
+    private function getSaleLabel() 
     {
         return $this->_scopeConfig->getValue('rw_uicore/product_labels/sale_label');
+    }
+
+    /** 
+     * Return Sale percentage option from config
+     * @return bool
+    */
+    private function isShowPercentage() 
+    {
+        return $this->_scopeConfig->getValue('rw_uicore/product_labels/show_percentage');
+    }
+
+    /** 
+     * Return percentage off the original price on Sale products
+     * @return string
+    */
+    private function getSalePercentage($product) 
+    {
+        $specialPrice = $product->getSpecialPrice();
+        $originalPrice = $product->getPrice();
+        $specialfromdate = $product->getSpecialFromDate();
+        $specialtodate = $product->getSpecialToDate();
+        $today = time();
+        $salePercent = 0;
+        $productLabel = '';
+
+        if (!$specialPrice)
+            $specialPrice = $originalPrice;
+        if ($specialPrice < $originalPrice) {
+            if((is_null($specialfromdate) && is_null($specialtodate)) 
+                || ($today >= strtotime($specialfromdate) && is_null($specialtodate)) 
+                || ($today <= strtotime($specialtodate) && is_null($specialfromdate)) 
+                || ($today >= strtotime($specialfromdate) && $today <= strtotime($specialtodate)))
+            {
+                $salePercent = 100-round(($specialPrice/$originalPrice)*100);
+            }
+        }
+
+        return $salePercent;
+    }
+
+    /** 
+     * Return product labels template
+     * @return string
+    */
+    public function getProductLabels($product) 
+    {
+        $html = '';
+
+        if ($this->isProductOnSale($product)) {
+            if ($this->isShowPercentage() && $this->getSalePercentage($product) > 0) {
+                $html .= '<span class="sale-label sale-value">'.$this->getSalePercentage($product).'%</span>';
+            } else {
+                $html .= '<span class="sale-label">'.$this->getSaleLabel().'</span>';
+            }
+        } elseif ($this->isProductNew($product)) {
+            $html .= '<span class="new-label">'.$this->getNewLabel().'</span>';
+        }
+
+        return $html;
     }
 }
