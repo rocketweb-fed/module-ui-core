@@ -16,3 +16,5 @@ $ bin/magento setup:upgrade
 
 ## Changes:
 - added Style Guide page that can be enabled/disabled via config
+- added product labels
+- added social sharing buttons on PDP
