@@ -1,28 +1,46 @@
-   <h2>Buttons</h2>
-<div class="flex flex-wrap">
+<h2>Buttons</h2>
+<div class="flex">
     <div class="flex-item">
         <h5>Primary</h5>
-        <button class="action primary" type="button"><span>Primary button</span></button>
-        <button class="action primary" type="button" disabled=""><span>Disabled Primary button</span></button>
-        <a class="action primary">Link as a button</a>
+        <button class="action primary" type="button"><span>Shop All Products</span></button>
     </div>
     <div class="flex-item">
-        <h5>Default</h5>
-        <button class="action" type="button"><span>Action</span></button>
-        <button class="action" type="button" disabled=""><span>Disbaled Action</span></button>
+        <h5>Secondary</h5>
+        <button class="action secondary" type="button"><span>Learn More</span></button>
     </div>
+    <div class="flex-item">
+        <h5>Action</h5>
+        <button class="action cta" type="button"><span>Proceed to Checkout</span></button>
+    </div>
+    <div class="flex-item">
+        <h5>Regular</h5>
+        <button class="action" type="button"><span>Submit</span></button>
+    </div>
+</div>
+<div class="flex">    
     <div class="flex-item">
         <h5>Sizes</h5>
-        <button class="action button--xl" type="button"><span>Extra arge button</span></button>
-        <button class="action button--l" type="button"><span>Large button</span></button>
-        <button class="action button--m" type="button"><span>Medium button</span></button>
-        <button class="action button--s" type="button"><span>Small button</span></button>
+        <button class="action large" type="button"><span>Large</span></button>
+        <button class="action" type="button"><span>Default</span></button>
+        <button class="action small" type="button"><span>Small</span></button>
     </div>
     <div class="flex-item">
-        <h5>Special</h5>
-        <button class="action button--link" type="button"><span>Extra arge button</span></button>
-        <button class="action button--gradient" type="button"><span>Large button</span></button>
-        <button class="action button--icon" type="button"><span>Medium button</span></button>
+        <h5>Disabled</h5>
+        <button class="action primary" type="button" disabled=""><span>Inactive</span></button>
+    </div>
+    <div class="flex-item">
+        <h5>Links</h5>
+        <a href="#" class="action primary">Link as a button</a>
+        <button class="action link" type="button"><span>Button as a link</span></button>
+    </div>
+</div>
+<div class="flex">
+    <div class="flex-item">
+        <h5>With icon</h5>
+        <button class="action tocart" type="button"><i class="rw-icon-cart"></i><span>Add to Cart</span></button>
+        <button class="action success" type="button"><i class="rw-icon-tick"></i><span>Accept</span></button>
+        <button class="action error" type="button"><i class="rw-icon-close"></i><span>Cancel</span></button>
+        <button class="action small error" type="button"><i class="rw-icon-trash"></i><span>Delete</span></button>
     </div>
 </div>
 <hr class="space">
