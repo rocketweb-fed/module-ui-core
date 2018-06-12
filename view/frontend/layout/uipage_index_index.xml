@@ -14,6 +14,7 @@
             <block class="RocketWeb\UiCore\Block\Index" name="ui-buttons" template="RocketWeb_UiCore::ui/buttons.phtml" />
             <block class="RocketWeb\UiCore\Block\Index" name="ui-forms" template="RocketWeb_UiCore::ui/forms.phtml" />
             <block class="RocketWeb\UiCore\Block\Index" name="ui-tabs" template="RocketWeb_UiCore::ui/tabs.phtml" />
+            <block class="RocketWeb\UiCore\Block\Index" name="ui-modals" template="RocketWeb_UiCore::ui/modals.phtml" />
             <block class="RocketWeb\UiCore\Block\Index" name="ui-tables" template="RocketWeb_UiCore::ui/tables.phtml" />
             <block class="RocketWeb\UiCore\Block\Index" name="ui-icons" template="RocketWeb_UiCore::ui/icons.phtml" />
         </block>

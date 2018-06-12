@@ -1,0 +1,41 @@
+<h2>Modals</h2>
+<button id="modal-trigger" class="action primary" type="button"><span>Open Modal</span></div>
+<div id="custom-modal" style="display:none"><p>Modal content</p></div>
+<script>
+require(
+[
+    'jquery',
+    'Magento_Ui/js/modal/modal'
+],
+function($, modal) {
+    var options = {
+        type: 'popup',
+        responsive: true,
+        innerScroll: true,
+        title: 'Modal Title',
+        modalClass: 'custom-modal',
+        buttons: [{
+            text: $.mage.__('Ok'),
+            class: 'action success',
+            click: function () {
+                this.closeModal();
+            }
+        }, {
+            text: $.mage.__('Dismiss'),
+            class: 'action',
+            click: function () {
+                this.closeModal();
+            }
+        }]
+    };
+
+    var popup = modal(options, $('#custom-modal'));
+
+    //this opens the modal, you can use some click event or whatever you need to trigger the modal here
+    $("#modal-trigger").click(function() {
+        $("#custom-modal").modal('openModal');
+    });
+}
+);
+</script>
+<hr class="space">
