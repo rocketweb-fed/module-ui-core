@@ -1,5 +1,5 @@
 <h2>Forms</h2>
-<form action="" method="" class="form">
+<form action="contact/index/post/" method="post" class="form" data-hasrequired="* Required Fields" data-mage-init='{"validation":{}}'>
     <p class="form-instructions">Form instructions paragraph</p>
     <div class="flex">
         <div class="flex-item">
@@ -31,7 +31,7 @@
                     <label class="label" for="comment">
                         <span>Comment</span>
                     </label>
-                    <textarea id="comment" name="comment" cols="5" rows="5" class="input-text" placeholder="Comment"></textarea>
+                    <textarea id="comment" name="comment" cols="5" rows="5" class="input-text required-entry" placeholder="Comment"></textarea>
                 </div>
             </fieldset>
         </div>
@@ -46,7 +46,7 @@
                         <span>Options</span>
                     </label>
                     <div class="control">
-                        <select class="select" name="options" id="options" placeholder="">
+                        <select class="select" name="options" id="options" placeholder="" data-validate="{required:true}">
                             <option value="">Please select an option</option>
                             <option data-title="Option 1" value="1">Option 1</option>
                             <option data-title="Option 2" value="2">Option 2</option>
@@ -90,6 +90,9 @@
                         </div>
                     </div>
                 </div>
+            </fieldset>
+            <fieldset class="fieldset">
+                <button type="submit" class="action primary">Validate</button>
             </fieldset>
         </div>
     </div>
