@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget_file.xsd">
+    <widget id="products_list">
+        <parameters>
+            <parameter name="template" xsi:type="select">
+                <options>
+                    <option name="slider" value="RocketWeb_UiCore::product/widget/content/product-slider.phtml">
+                        <label translate="true">Products Slider Template</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+        <containers>
+            <container name="content">
+                <template name="slider" value="slider" />
+            </container>
+            <container name="content.top">
+                <template name="slider" value="slider" />
+            </container>
+            <container name="content.bottom">
+                <template name="slider" value="slider" />
+            </container>
+        </containers>
+    </widget>
+</widgets>
