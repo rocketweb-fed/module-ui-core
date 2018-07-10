@@ -1,5 +1,5 @@
-# module-ui-core
-Magento 2 module for theme-independent UI customizations
+# RocketWeb UI Core module
+Magento 2 module including custom functionality and UI customizations. Module can be used on its own but works best with [RW Prime theme](https://github.com/rocketweb-fed/magento2-theme-prime) which it comes bundled with.
 
 ## Installation
 Install using Composer
@@ -15,6 +15,8 @@ $ bin/magento setup:upgrade
 ```
 
 ## Changes:
+- added rwSlider jQuery widget that can used to initialize Slick based product and banner carousels
+- refactored product and banner carousels (requires Weltpixel_OwlCarouselSlider module)
 - added Style Guide page that can be enabled/disabled via config
 - added product labels
 - added social sharing buttons on PDP

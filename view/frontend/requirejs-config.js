@@ -1,7 +1,7 @@
 var config = {
     map: {
         '*': {
-            productSlider: 'RocketWeb_UiCore/js/product-slider'
+            rwSlider: 'RocketWeb_UiCore/js/rw-slider'
         }
     },
     paths: {
