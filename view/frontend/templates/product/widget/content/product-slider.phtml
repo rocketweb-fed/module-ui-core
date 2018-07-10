@@ -42,11 +42,10 @@
         <div class="block-content content">
             <?= /* @noEscape */ '<!-- ' . $image . '-->' ?>
             <div class="products wrapper products-<?= /* @noEscape */ $mode ?> <?= /* @noEscape */ $mode ?>">
-                <div class="slick-slider-<?php echo $type;?><?php echo count($items)== 1? '-single-item': '';?> slider-hide" 
+                <div class="<?php echo $type;?> slider-hide" 
                     <?php if($enableSlider) : ?>    
                         data-mage-init='{"productSlider" : {
                             "total": "<?php echo count($items) ?>",
-                            "type": "<?php echo $type ?>",
                             "sliderConfig": <?php echo $sliderConfig ?>,
                             "breakpoints": <?php echo $breakpointConfig ?>
                         }}'
