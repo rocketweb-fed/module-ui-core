@@ -15,8 +15,6 @@ $ bin/magento setup:upgrade
 ```
 
 ## Changes:
-- added rwSlider jQuery widget that can used to initialize Slick based product and banner carousels
-- refactored product and banner carousels (requires Weltpixel_OwlCarouselSlider module)
 - added Style Guide page that can be enabled/disabled via config
 - added product labels
 - added social sharing buttons on PDP
